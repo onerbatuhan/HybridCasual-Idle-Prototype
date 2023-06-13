@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveEvent : MonoBehaviour
+namespace PlayerSystem.Events
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerMoveEvent : MonoBehaviour
     {
-        
-    }
+        public float moveSpeed;
+        public float rotateSpeed;
+        private Vector3 _moveVector;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Move(DynamicJoystick dynamicJoystick, Rigidbody rigidBody,Transform playerTransform)
+        {
+            _moveVector.x = dynamicJoystick.Horizontal * moveSpeed * Time.deltaTime;
+            _moveVector.z = dynamicJoystick.Vertical * moveSpeed * Time.deltaTime;
+            if (_moveVector != Vector3.zero)
+            {
+                Vector3 direction = Vector3.RotateTowards(playerTransform.forward, _moveVector, rotateSpeed * Time.deltaTime, 0.0f);
+                playerTransform.rotation = Quaternion.LookRotation(direction);
+                // _animatorController.PlayRun();
+            }
+            else
+            {
+                // _animatorController.PlayIdle();
+            }
+            rigidBody.MovePosition(rigidBody.position + _moveVector);
+        }
     }
 }

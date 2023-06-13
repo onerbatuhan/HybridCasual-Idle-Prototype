@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using GemSystem.Manager;
+using PlayerSystem.Events;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace PlayerSystem.Manager
 {
-    // Start is called before the first frame update
-    void Start()
+  public class PlayerController : MonoBehaviour
+  {
+
+    public DynamicJoystick dynamicJoystick;
+    public PlayerMoveEvent playerMoveEvent;
+    [SerializeField] private Rigidbody rigidBody;
+    public bool canPlay;
+    private void Awake()
     {
-        
+      rigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+      HandlePlayerMovement();
     }
+
+    private void HandlePlayerMovement()
+    {
+      if (canPlay && (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetMouseButton(0)))
+      {
+        playerMoveEvent.Move(dynamicJoystick, rigidBody,transform);
+      }
+    }
+
+    
+    
+
+    
+  }
 }
