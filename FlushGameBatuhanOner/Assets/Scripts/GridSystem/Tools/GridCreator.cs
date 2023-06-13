@@ -1,3 +1,4 @@
+using GemSystem.Manager;
 using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -7,7 +8,6 @@ namespace GridSystem.Tools
 {
     public class GridCreator : MonoBehaviour
     {
-        public GameObject topPrefab;
         public int rowCount = 3;
         public int columnCount = 4; 
         public float distanceBetweenTops = 2.0f;
@@ -46,12 +46,14 @@ namespace GridSystem.Tools
             GameObject gridObject = new GameObject("Grid");
             gridObject.transform.position = transform.position;
 
+           
             for (int row = 0; row < rowCount; row++)
             {
                 for (int column = 0; column < columnCount; column++)
                 {
+                    int randomValue = Random.Range(0, GemController.Instance.gemDataList.Count);
                     Vector3 spawnPosition = startPosition + new Vector3(column * distanceBetweenTops, 0.0f, row * distanceBetweenTops); // Oluşturma pozisyonu
-                    GameObject newGemObject = Instantiate(topPrefab, spawnPosition, Quaternion.identity);
+                    GameObject newGemObject = Instantiate(GemController.Instance.gemDataList[randomValue].gemObject, spawnPosition, Quaternion.identity);
                     newGemObject.transform.parent = gridObject.transform;
                 }
             }
@@ -67,7 +69,7 @@ namespace GridSystem.Tools
         {
             if (EditorApplication.isPlaying) return;
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, .5f);
+            Gizmos.DrawWireCube(transform.position,new Vector3(3.5f,0,3.5f));
         }
 #endif
     }

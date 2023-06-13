@@ -1,3 +1,5 @@
+using System.Linq;
+using GemSystem.Manager;
 using GemSystem.Tables;
 using UnityEditor;
 using UnityEngine;
@@ -39,20 +41,30 @@ namespace GemSystem.Tools
 
         private void Add()
         {
+           
+            foreach (GemData gemData in GemController.Instance.gemDataList)
+            {
+                if (gemData.gemName != gemName) continue;
+                Debug.LogError("Aynı isime sahip bir Gem Data var.");
+                return;
+            }
+
+            
             // Scriptable Object create
-            GemData gemDataData = ScriptableObject.CreateInstance<GemData>();
-            gemDataData.gemName = gemName;
-            gemDataData.startingSalesPrice = startingSalesPrice;
-            gemDataData.gemIcon = gemIcon;
-            gemDataData.gemObject = gemObject;
+            GemData newGemData = ScriptableObject.CreateInstance<GemData>();
+            newGemData.gemName = gemName;
+            newGemData.startingSalesPrice = startingSalesPrice;
+            newGemData.gemIcon = gemIcon;
+            newGemData.gemObject = gemObject;
+            GemController.Instance.gemDataList.Add(newGemData);
 
             // folder save
             string folderName = gemName + ".asset";
             string currentFilePath = filePath + "/" + folderName;
-            AssetDatabase.CreateAsset(gemDataData, currentFilePath);
+            AssetDatabase.CreateAsset(newGemData, currentFilePath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log("Gem created and folder added : " + currentFilePath);
+            Debug.Log("Gem başarıyla oluşturuldu. Dosya yolundan kontrol edebilirsin.: " + currentFilePath);
         }
     }
 }
