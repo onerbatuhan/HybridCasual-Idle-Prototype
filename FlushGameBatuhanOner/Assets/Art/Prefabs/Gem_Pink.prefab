@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8480479393330239299}
   - component: {fileID: 4764646257362147558}
   - component: {fileID: 7348638530486660140}
+  - component: {fileID: 239557124625375635}
+  - component: {fileID: 2393238746214136051}
+  - component: {fileID: 5349855769961569307}
   m_Layer: 0
   m_Name: Gem_Pink
   m_TagString: Untagged
@@ -83,3 +86,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &239557124625375635
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150021139023023609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.748614
+  m_Height: 1.5119847
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.21877271, z: 0}
+--- !u!54 &2393238746214136051
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150021139023023609}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5349855769961569307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150021139023023609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee42d6bceddd56409cf20640418c51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemData: {fileID: 0}
+  canCollected: 0

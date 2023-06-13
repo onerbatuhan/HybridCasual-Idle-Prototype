@@ -1,4 +1,5 @@
 using GemSystem.Manager;
+using GemSystem.Tables;
 using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -51,10 +52,13 @@ namespace GridSystem.Tools
             {
                 for (int column = 0; column < columnCount; column++)
                 {
-                    int randomValue = Random.Range(0, GemController.Instance.gemDataList.Count);
+                    int randomValue = Random.Range(0, GemDataAccessController.Instance.gemDataList.Count);
+                    GemData gemData = GemDataAccessController.Instance.gemDataList[randomValue];
                     Vector3 spawnPosition = startPosition + new Vector3(column * distanceBetweenTops, 0.0f, row * distanceBetweenTops); // Oluşturma pozisyonu
-                    GameObject newGemObject = Instantiate(GemController.Instance.gemDataList[randomValue].gemObject, spawnPosition, Quaternion.identity);
+                    GameObject newGemObject = Instantiate(GemDataAccessController.Instance.gemDataList[randomValue].gemObject, spawnPosition, Quaternion.identity);
                     newGemObject.transform.parent = gridObject.transform;
+                    newGemObject.transform.GetComponent<GemController>().gemData = gemData;
+                    GemDataAccessController.Instance.gemObjectList.Add(newGemObject);
                 }
             }
 
@@ -64,6 +68,11 @@ namespace GridSystem.Tools
             cloneFrameObject.transform.localScale = new Vector3(columnCount * distanceBetweenTops / 10, cloneFrameObject.transform.localScale.y, rowCount * distanceBetweenTops / 10);
         }
 
+        
+        
+        
+        
+        
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {

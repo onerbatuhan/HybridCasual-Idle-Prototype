@@ -1974,6 +1974,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6359112800851487366, guid: c0695e50372965840badd7b84ed57617, type: 3}
   m_PrefabInstance: {fileID: 405001014}
   m_PrefabAsset: {fileID: 0}
+--- !u!115 &425888970
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 5
+  m_Script: 
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_ExecutionOrder: 0
+  m_ClassName: GemDataAccessController
+  m_Namespace: GemSystem.Manager
 --- !u!1 &442769378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,7 +2013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442769378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.44, y: 0, z: 13.88}
+  m_LocalPosition: {x: 19.72, y: 0, z: -17.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2018,8 +2032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228bcba24a86c1e469c583b1fe3b25c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rowCount: 1
-  columnCount: 4
+  rowCount: 5
+  columnCount: 3
   distanceBetweenTops: 2
   gridFrameObject: {fileID: 2474597130350442253, guid: f87987f94e7f41a43be24d562da64815, type: 3}
 --- !u!1 &468559975
@@ -2476,13 +2490,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 615674557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063faea2de6257f4dae0bfba1424845b, type: 3}
+  m_Script: {fileID: 425888970}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroy: 1
   gemDataList:
-  - {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
   - {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  - {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
   - {fileID: 11400000, guid: b4ccc4aedaed2a4459723387ee6457b4, type: 2}
   gemObjectList: []
 --- !u!1001 &619342530
@@ -3917,53 +3931,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 803019497602220625, guid: e1eaa02314a382d4193af3de770677f6, type: 3}
   m_PrefabInstance: {fileID: 803019496632029159}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1005736296
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1005736298}
-  - component: {fileID: 1005736297}
-  m_Layer: 0
-  m_Name: GemController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1005736297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005736296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063faea2de6257f4dae0bfba1424845b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroy: 1
-  gemDataList: []
-  gemObjectList: []
---- !u!4 &1005736298
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005736296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1056934836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4674286094358681688, guid: 27e25e3bc7ba5f640aea250f9a3842bd, type: 3}

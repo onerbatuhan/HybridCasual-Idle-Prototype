@@ -42,7 +42,7 @@ namespace GemSystem.Tools
         private void Add()
         {
            
-            foreach (GemData gemData in GemController.Instance.gemDataList)
+            foreach (GemData gemData in GemDataAccessController.Instance.gemDataList)
             {
                 if (gemData.gemName != gemName) continue;
                 Debug.LogError("Aynı isime sahip bir Gem Data var.");
@@ -56,7 +56,7 @@ namespace GemSystem.Tools
             newGemData.startingSalesPrice = startingSalesPrice;
             newGemData.gemIcon = gemIcon;
             newGemData.gemObject = gemObject;
-            GemController.Instance.gemDataList.Add(newGemData);
+            GemDataAccessController.Instance.gemDataList.Add(newGemData);
 
             // folder save
             string folderName = gemName + ".asset";
