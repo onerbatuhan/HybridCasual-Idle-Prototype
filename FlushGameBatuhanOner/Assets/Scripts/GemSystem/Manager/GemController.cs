@@ -11,22 +11,42 @@ namespace GemSystem.Manager
         public GemData gemData;
         public bool canCollected;
         public GemAnimationEvent gemAnimationEvent;
- 
+        public GemSpawnerEvent gemSpawnerEvent;
+        public Transform gemOriginalTransform;
+        private bool _canReturn = true;
 
-        public void Awake()
+        public void Start()
         {
+           
+            gemOriginalTransform = transform;
             gemAnimationEvent = FindObjectOfType<GemAnimationEvent>();
+            gemSpawnerEvent = FindObjectOfType<GemSpawnerEvent>();
             gemAnimationEvent.GemAnimationStart(transform);
+            
         }
 
-        private void OnCollisionEnter(Collision collision)
+       
+
+        private void OnTriggerStay(Collider other)
         {
-            if (!collision.transform.CompareTag("Player")) return;
-            GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
+            if(!canCollected) return;
+            if (!_canReturn) return;
+            _canReturn = false;
+            CollectGem(other);
+
+
         }
-
-      
-
         
+        private void CollectGem(Collider other)
+        {
+            if (!other.gameObject.CompareTag("Player"))
+                return;
+    
+            GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.SetActive(false);
+            gemSpawnerEvent.CreateGem(gemOriginalTransform,transform.parent);
+            
+        }
     }
 }

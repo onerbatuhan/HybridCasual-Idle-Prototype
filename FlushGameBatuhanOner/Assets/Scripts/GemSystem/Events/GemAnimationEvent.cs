@@ -17,7 +17,7 @@ namespace GemSystem.Events
             gemTransform.localScale = Vector3.zero;
             gemTransform.DOScale(Vector3.one, 5).OnUpdate(() =>
             {
-                if (!(gemTransform.localScale.x > .25f)) return;
+                if (!(gemTransform.localScale.x > .45f)) return;
                 gemController.canCollected = true;
 
             }).OnComplete(() =>
