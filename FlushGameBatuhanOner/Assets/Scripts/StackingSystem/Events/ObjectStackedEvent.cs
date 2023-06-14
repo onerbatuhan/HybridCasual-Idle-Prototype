@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AudioSystem.Manager;
 using DataSaveSystem.Manager;
 using DesignPatterns;
 using GemSystem.Tables;
@@ -69,7 +70,7 @@ namespace StackingSystem.Events
 
         private void PlaySoundEffect()
         {
-           
+            AudioController.Instance.gemStackedSound.Play();
         }
 
        

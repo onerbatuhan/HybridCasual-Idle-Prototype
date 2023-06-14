@@ -18,6 +18,7 @@ namespace StackingSystem.Manager
         public void TriggerStackedEvents(GemData currentStackedGemData,Transform currentGemTransform)
         {
            _objectStackedEvent.PerformStackedEvent(currentStackedGemData,currentGemTransform);
+           _playerStackingEvent.VerticalStackEvent(currentGemTransform.gameObject);
         }
     }
 }
