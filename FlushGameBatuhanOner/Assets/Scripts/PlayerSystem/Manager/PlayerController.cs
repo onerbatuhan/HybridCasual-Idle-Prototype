@@ -21,7 +21,7 @@ namespace PlayerSystem.Manager
       animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
       
       if (!canPlay) return;
