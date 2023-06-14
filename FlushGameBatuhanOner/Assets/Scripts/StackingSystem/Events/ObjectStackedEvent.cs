@@ -5,9 +5,24 @@ namespace StackingSystem.Events
     public class ObjectStackedEvent : MonoBehaviour
     {
 
-        private void StackedObjectCounter()
+        public void PerformStackedEvent()
+        {
+            
+        }
+        private void CountCollectedGemsByType()
         {
         
         }
+        
+        private void TriggerParticleEffect()
+        {
+            
+        }
+
+        private void PlaySoundEffect()
+        {
+           
+        }
+
     }
 }

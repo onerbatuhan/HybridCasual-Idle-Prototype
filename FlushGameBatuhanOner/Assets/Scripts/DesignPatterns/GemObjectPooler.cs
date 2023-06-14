@@ -38,7 +38,9 @@ namespace DesignPatterns
             
             if (objectQueue.Count == 0)
             {
-                GameObject newObj = Instantiate(gemDataObjectList[Random.Range(0, gemDataObjectList.Count)].gemObject, parentObject, true);
+                GemData randomGemData = gemDataObjectList[Random.Range(0, gemDataObjectList.Count)];
+                GameObject newObj = Instantiate(randomGemData.gemObject, parentObject, true);
+                newObj.GetComponent<GemController>().gemData = randomGemData;
                 newObj.SetActive(false);
                 objectQueue.Enqueue(newObj);
             }

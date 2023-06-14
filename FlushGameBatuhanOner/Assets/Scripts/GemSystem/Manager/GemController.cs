@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using GemSystem.Events;
 using GemSystem.Tables;
+using StackingSystem.Manager;
 using UnityEngine;
 
 namespace GemSystem.Manager
@@ -41,10 +42,11 @@ namespace GemSystem.Manager
         {
             if (!other.gameObject.CompareTag("Player"))
                 return;
-    
+            StackController stackController = other.GetComponent<StackController>();
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.SetActive(false);
+            // stackController.TriggerStackedEvents();
             gemSpawnerEvent.CreateGem(gemOriginalTransform,transform.parent);
             
         }
