@@ -15,9 +15,9 @@ namespace StackingSystem.Manager
             _playerStackingEvent = FindObjectOfType<PlayerStackingEvent>();
         }
 
-        public void TriggerStackedEvents(GemData currentStackedGemData)
+        public void TriggerStackedEvents(GemData currentStackedGemData,Transform currentGemTransform)
         {
-           _objectStackedEvent.PerformStackedEvent(currentStackedGemData);
+           _objectStackedEvent.PerformStackedEvent(currentStackedGemData,currentGemTransform);
         }
     }
 }

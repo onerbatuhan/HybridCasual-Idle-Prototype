@@ -46,7 +46,7 @@ namespace GemSystem.Manager
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.SetActive(false);
-            stackController.TriggerStackedEvents(gemData);
+            stackController.TriggerStackedEvents(gemData,transform);
             gemSpawnerEvent.CreateGem(gemOriginalTransform,transform.parent);
             
         }
