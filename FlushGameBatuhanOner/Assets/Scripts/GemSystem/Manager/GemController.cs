@@ -40,13 +40,13 @@ namespace GemSystem.Manager
         
         private void CollectGem(Collider other)
         {
-            if (!other.gameObject.CompareTag("Player"))
-                return;
+            if (!other.gameObject.CompareTag("Player")) return;
+            
             StackController stackController = other.GetComponent<StackController>();
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             gameObject.SetActive(false);
-            // stackController.TriggerStackedEvents();
+            stackController.TriggerStackedEvents(gemData);
             gemSpawnerEvent.CreateGem(gemOriginalTransform,transform.parent);
             
         }

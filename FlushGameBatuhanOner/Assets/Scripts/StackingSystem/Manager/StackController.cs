@@ -1,4 +1,5 @@
 using System;
+using GemSystem.Tables;
 using StackingSystem.Events;
 using UnityEngine;
 
@@ -6,17 +7,17 @@ namespace StackingSystem.Manager
 {
     public class StackController : MonoBehaviour
     {
-        [SerializeField] private ObjectStackedEvent objectStackedEvent;
-        [SerializeField] private PlayerStackingEvent playerStackingEvent;
+         private ObjectStackedEvent  _objectStackedEvent;
+         private PlayerStackingEvent _playerStackingEvent;
         private void Awake()
         {
-            objectStackedEvent = FindObjectOfType<ObjectStackedEvent>();
-            playerStackingEvent = FindObjectOfType<PlayerStackingEvent>();
+            _objectStackedEvent = FindObjectOfType<ObjectStackedEvent>();
+            _playerStackingEvent = FindObjectOfType<PlayerStackingEvent>();
         }
 
-        public void TriggerStackedEvents()
+        public void TriggerStackedEvents(GemData currentStackedGemData)
         {
-            
+           _objectStackedEvent.PerformStackedEvent(currentStackedGemData);
         }
     }
 }
