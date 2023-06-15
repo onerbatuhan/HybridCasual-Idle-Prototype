@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DesignPatterns;
+using GameSystem.Manager;
 using UnityEngine;
 
 namespace DataSaveSystem.Manager
@@ -27,14 +28,14 @@ namespace DataSaveSystem.Manager
                 keys.Add(key);
             }
 
-            PlayerPrefs.SetString("objectCountsKeys", string.Join(",", keys.ToArray()));
+            PlayerPrefs.SetString(GameController.ObjectCountsKey, string.Join(",", keys.ToArray()));
             PlayerPrefs.Save();
         }
 
         public void DataLoad(Dictionary<string,int> objectCounts,string objectCountKeyPrefix)
         {
             objectCounts.Clear();
-            foreach (var key in PlayerPrefs.GetString("objectCountsKeys", "").Split(','))
+            foreach (var key in PlayerPrefs.GetString(GameController.ObjectCountsKey, "").Split(','))
             {
                 if (!string.IsNullOrEmpty(key) && PlayerPrefs.HasKey(key))
                 {

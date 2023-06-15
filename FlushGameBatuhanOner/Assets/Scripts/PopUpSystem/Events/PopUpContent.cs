@@ -12,6 +12,7 @@ namespace PopUpSystem.Events
 
         public void ObjectValuePrint(string currentObjectName,int collectedObjectTotalCount,Image objectImage)
         {
+            Debug.Log("ff");
             objectNameText.text = currentObjectName;
             collectedObjectTotalCountText.text = collectedObjectTotalCount.ToString();
             objectImageUI = objectImage;
