@@ -18,15 +18,14 @@ namespace StackingSystem.Events
             currentGemObject.transform.SetParent(stackStartPosition);
             currentGemObject.transform.position = stackStartPosition.position;
 
-            currentGemObject.transform.DOLocalJump(new Vector3(0, gemStack.Count * 1, -1), 1,1,.6f).OnComplete((() =>
+            currentGemObject.transform.DOLocalJump(new Vector3(0, gemStack.Count * 1, -1), 1, 1, .6f).OnComplete((() =>
             {
                 currentGemObject.transform.DOLocalMove(new Vector3(0, gemStack.Count * .5f, 0), .3f);
-                gemStack.Add(currentGemObject);
-            }));
-            
-            
-        }
 
-        
+                gemStack.Add(currentGemObject);
+                
+
+            }));
+        }
     }
 }
