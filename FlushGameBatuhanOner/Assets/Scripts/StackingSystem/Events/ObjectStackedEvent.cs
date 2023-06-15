@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using AudioSystem.Manager;
 using DataSaveSystem.Manager;
 using DesignPatterns;
+using GameSystem.Manager;
 using GemSystem.Tables;
 using UnityEngine;
 
@@ -11,13 +12,12 @@ namespace StackingSystem.Events
 {
     public class ObjectStackedEvent : MonoBehaviour
     {
-        //Alttaki iki değeri GameController'dan çekersin.
         private Dictionary<string, int> _gemCounts = new Dictionary<string, int>();
-        private const string GemCountKeyPrefix = "GemCount_";
+        
         public ObjectPooler objectPooler;
         private void Start()
         {
-            DataController.Instance.DataLoad(_gemCounts,GemCountKeyPrefix);
+            DataController.Instance.DataLoad(_gemCounts,GameController.EarningKey);
         }
 
         public void PerformStackedEvent(GemData stackedGemObjectData,Transform stackedGemObjectTransform)
@@ -40,7 +40,7 @@ namespace StackingSystem.Events
             {
                 Debug.Log("Toplanan " + kvp.Key + " Taş Sayısı: " + kvp.Value);
             }
-            DataController.Instance.DataSave(_gemCounts,GemCountKeyPrefix);
+            DataController.Instance.DataSave(_gemCounts,GameController.EarningKey);
         }
         
         private void TriggerParticleEffect(Transform currentGemTransform)
@@ -56,9 +56,7 @@ namespace StackingSystem.Events
            }
            particleEffectObject.transform.position = currentGemTransform.position;
            StartCoroutine("ParticleEffectPoolEnqueue",particleEffectObject);
-
-
-
+           
         }
 
         private IEnumerator ParticleEffectPoolEnqueue(GameObject particleEffectObject)

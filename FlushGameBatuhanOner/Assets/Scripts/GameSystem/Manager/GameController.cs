@@ -10,6 +10,8 @@ namespace GameSystem.Manager
     {
         public int gameTotalEarningsValue;
         public TextMeshProUGUI moneyTextUI;
+        public const string EarningKey = "money";  
+        public const string GemCountKeyPrefix = "GemCount_";
         private void Start()
         {
             LoadEarningValue();
@@ -17,7 +19,7 @@ namespace GameSystem.Manager
 
         private void LoadEarningValue()
         {
-            gameTotalEarningsValue = DataController.Instance.DataLoad("money");
+            gameTotalEarningsValue = DataController.Instance.DataLoad(EarningKey);
             moneyTextUI.text = gameTotalEarningsValue.ToString();
         }
     }

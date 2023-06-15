@@ -53,7 +53,7 @@ namespace SaleSystem.Events
       private void CalculateEarnings(GameObject currentSaleObject)
       {
          GemController gemController = currentSaleObject.GetComponent<GemController>();
-         DataController.Instance.DataSave(DataController.Instance.DataLoad("money")+gemController.finalSaleValue, "money");
+         DataController.Instance.DataSave(DataController.Instance.DataLoad(GameController.EarningKey)+gemController.finalSaleValue, GameController.EarningKey);
          GameController.Instance.gameTotalEarningsValue += gemController.finalSaleValue;
          
       }
