@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1155325927834897475}
   - component: {fileID: 5804521425690142688}
   - component: {fileID: 8173223472012251851}
+  - component: {fileID: 4874610059914390159}
   m_Layer: 0
   m_Name: SaleZoneTrigger
   m_TagString: Untagged
@@ -97,6 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 602.3, z: 1}
   m_Center: {x: 0, y: 271, z: 0}
+--- !u!114 &4874610059914390159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065042897479643612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e0ad39ff239a249855d1b78894ba56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectSoldEvent: {fileID: 0}
 --- !u!1 &4822367127556355969
 GameObject:
   m_ObjectHideFlags: 0
