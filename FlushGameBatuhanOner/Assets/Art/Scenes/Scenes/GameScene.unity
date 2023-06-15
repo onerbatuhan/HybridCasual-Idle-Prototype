@@ -185,7 +185,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15354147}
-  m_LocalRotation: {x: 0.30214962, y: 0.000000016402169, z: -0.000000005198903, w: 0.95326054}
+  m_LocalRotation: {x: 0.30214962, y: -0.000000016402158, z: 0.000000005198901, w: 0.95326054}
   m_LocalPosition: {x: 31, y: 10, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -194,6 +194,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 48.487, y: -143.702, z: 0}
+--- !u!4 &15739191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 303884024204548085, guid: 4e5a7447130088c4e8f7240b7a389673, type: 3}
+  m_PrefabInstance: {fileID: 843349497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &33210540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,7 +735,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111804757}
-  m_LocalRotation: {x: 0.30214962, y: 0.000000016402169, z: -0.000000005198903, w: 0.95326054}
+  m_LocalRotation: {x: 0.30214962, y: -0.000000016402158, z: 0.000000005198901, w: 0.95326054}
   m_LocalPosition: {x: 31, y: 10, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4125,6 +4130,14 @@ PrefabInstance:
     - target: {fileID: 303884024204548085, guid: 4e5a7447130088c4e8f7240b7a389673, type: 3}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 303884024204548085, guid: 4e5a7447130088c4e8f7240b7a389673, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 303884024204548085, guid: 4e5a7447130088c4e8f7240b7a389673, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1803544649226094704, guid: 4e5a7447130088c4e8f7240b7a389673, type: 3}
       propertyPath: m_LocalScale.x
@@ -8359,7 +8372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ebfe298b9917e4bb1c69630ff09894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  salesZone: {fileID: 843349498}
+  salesZone: {fileID: 15739191}
   uiElement: {fileID: 1695466094}
   mainCamera: {fileID: 111804759}
   edgeOffset: 50

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AudioSystem.Manager;
 using GemSystem.Manager;
 using StackingSystem.Events;
 using UnityEngine;
@@ -16,8 +17,8 @@ namespace SaleSystem.Events
          _playerStacking = FindObjectOfType<PlayerStackingEvent>();
          _salesScreenUIEvent = FindObjectOfType<SalesScreenUIEvent>();
       }
-
-      public IEnumerator RevenueCalculation()
+      
+      public IEnumerator ExecuteSalesProcess()
       {
          List<GameObject> saledObjectList = _playerStacking.gemStack;
          
@@ -27,8 +28,9 @@ namespace SaleSystem.Events
 
             if (i >= saledObjectList.Count) continue;
             GameObject currentSaledObject = saledObjectList[i];
-            SalesScreenAnimationStart(currentSaledObject);
             ObjectDestruction(currentSaledObject);
+            SalesScreenAnimationStart(currentSaledObject);
+            AudioController.Instance.gemSaleSound.Play();
          }
       }
       
@@ -36,11 +38,13 @@ namespace SaleSystem.Events
       {
          _playerStacking.gemStack.Remove(currentSaledObject);
          currentSaledObject.SetActive(false);
+         
       }
 
       private void SalesScreenAnimationStart(GameObject currentSaleObject)
       {
          _salesScreenUIEvent.MoveUIObjectToTargetPosition(currentSaleObject);
       }
+      
    }
 }

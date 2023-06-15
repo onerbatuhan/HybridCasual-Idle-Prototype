@@ -16,13 +16,13 @@ namespace SaleSystem.Manager
        private void OnTriggerStay(Collider other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            _objectSoldEvent.StartCoroutine(nameof(ObjectSoldEvent.RevenueCalculation));
+            _objectSoldEvent.StartCoroutine(nameof(ObjectSoldEvent.ExecuteSalesProcess));
         }
 
        private void OnTriggerExit(Collider other)
        {
            if (!other.gameObject.CompareTag("Player")) return;
-           _objectSoldEvent.StopCoroutine(nameof(ObjectSoldEvent.RevenueCalculation));
+           _objectSoldEvent.StopCoroutine(nameof(ObjectSoldEvent.ExecuteSalesProcess));
        }
     }
 }
