@@ -10,6 +10,7 @@ namespace GemSystem.Manager
     public class GemController : MonoBehaviour
     {
         public GemData gemData;
+        public int finalSaleValue;
         public bool canCollected;
         public GemAnimationEvent gemAnimationEvent;
         public GemSpawnerEvent gemSpawnerEvent;
@@ -41,7 +42,9 @@ namespace GemSystem.Manager
         private void CollectGem(Collider other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            
+
+            finalSaleValue = (int) (transform.localScale.x *100 + gemData.startingSalesPrice);
+            Debug.Log(finalSaleValue);
             StackController stackController = other.GetComponent<StackController>();
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;

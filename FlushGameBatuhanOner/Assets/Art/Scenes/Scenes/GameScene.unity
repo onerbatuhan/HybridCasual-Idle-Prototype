@@ -185,7 +185,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15354147}
-  m_LocalRotation: {x: 0.30214962, y: -0.000000016402158, z: 0.000000005198901, w: 0.95326054}
+  m_LocalRotation: {x: 0.30214962, y: 0.000000016402169, z: -0.000000005198903, w: 0.95326054}
   m_LocalPosition: {x: 31, y: 10, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -735,7 +735,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111804757}
-  m_LocalRotation: {x: 0.30214962, y: -0.000000016402158, z: 0.000000005198901, w: 0.95326054}
+  m_LocalRotation: {x: 0.30214962, y: 0.000000016402169, z: -0.000000005198903, w: 0.95326054}
   m_LocalPosition: {x: 31, y: 10, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -826,6 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: b4ccc4aedaed2a4459723387ee6457b4, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -1058,6 +1059,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 283491861412938182, guid: d85f77d368a7cb74d88aeccc3c5a5348, type: 3}
   m_PrefabInstance: {fileID: 146652767}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &148650266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148650267}
+  - component: {fileID: 148650268}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &148650267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148650266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1618216127}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148650268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148650266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1d8046ce24714b8bc04a21cff5fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroy: 1
+  gameTotalEarningsValue: 0
 --- !u!1001 &157732348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,6 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: b4ccc4aedaed2a4459723387ee6457b4, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -3331,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -3849,6 +3898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -4408,6 +4458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -4921,6 +4972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -5720,6 +5772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -5858,6 +5911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: b4ccc4aedaed2a4459723387ee6457b4, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -6232,6 +6286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -7882,6 +7937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: b4ccc4aedaed2a4459723387ee6457b4, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -8404,6 +8460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyBarPosition: {fileID: 1204298177}
   objectPooler: {fileID: 282379274}
+  moneyTextUI: {fileID: 1732391115}
 --- !u!1001 &1518648121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8772,6 +8829,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1204298177}
+  - {fileID: 1732391114}
   m_Father: {fileID: 1835321102}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8855,6 +8913,7 @@ Transform:
   - {fileID: 2063011583}
   - {fileID: 1420310902}
   - {fileID: 1491581602}
+  - {fileID: 148650267}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8907,6 +8966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -9366,6 +9426,141 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5142532879768850087, guid: 5983c8a04c0e73047a6c860b9cd9aaad, type: 3}
   m_PrefabInstance: {fileID: 1715136066}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1732391113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732391114}
+  - component: {fileID: 1732391116}
+  - component: {fileID: 1732391115}
+  m_Layer: 5
+  m_Name: MoneyBarText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1732391114
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732391113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1613770397}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -38.3, y: -30}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1732391115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732391113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 60
+  m_fontSizeBase: 60
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -43.846794, y: -38.18121, z: 15.603188, w: 6.190542}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1732391116
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732391113}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1738713407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9485,6 +9680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: e28f113307ee99e42bbd08ab95024947, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -9618,6 +9814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -10114,7 +10311,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -10190,6 +10387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}
@@ -11257,6 +11455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemData: {fileID: 11400000, guid: 3474bfd5b08313b4398e1d1a957b1cc7, type: 2}
+  finalSaleValue: 0
   canCollected: 0
   gemAnimationEvent: {fileID: 0}
   gemSpawnerEvent: {fileID: 0}

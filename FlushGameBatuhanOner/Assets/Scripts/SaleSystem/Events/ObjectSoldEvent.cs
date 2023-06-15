@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AudioSystem.Manager;
+using GameSystem.Manager;
 using GemSystem.Manager;
 using StackingSystem.Events;
 using UnityEngine;
@@ -29,6 +30,7 @@ namespace SaleSystem.Events
             if (i >= saledObjectList.Count) continue;
             GameObject currentSaledObject = saledObjectList[i];
             ObjectDestruction(currentSaledObject);
+            CalculateEarnings(currentSaledObject);
             SalesScreenAnimationStart(currentSaledObject);
             AudioController.Instance.gemSaleSound.Play();
          }
@@ -44,6 +46,14 @@ namespace SaleSystem.Events
       private void SalesScreenAnimationStart(GameObject currentSaleObject)
       {
          _salesScreenUIEvent.MoveUIObjectToTargetPosition(currentSaleObject);
+         _salesScreenUIEvent.PrintTheEarningText(); 
+      }
+
+      private void CalculateEarnings(GameObject currentSaleObject)
+      {
+         GemController gemController = currentSaleObject.GetComponent<GemController>();
+         GameController.Instance.gameTotalEarningsValue += gemController.finalSaleValue;
+         
       }
       
    }

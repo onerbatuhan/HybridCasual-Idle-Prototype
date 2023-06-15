@@ -1,6 +1,9 @@
 using DesignPatterns;
 using DG.Tweening;
+using GameSystem.Manager;
+using TMPro;
 using UnityEngine;
+
 
 namespace SaleSystem.Events
 {
@@ -8,6 +11,7 @@ namespace SaleSystem.Events
     {
         public Transform moneyBarPosition;
         public ObjectPooler objectPooler;
+        public TextMeshProUGUI moneyTextUI;
 
         public void MoveUIObjectToTargetPosition(GameObject targetWorldObject)
         {
@@ -19,6 +23,12 @@ namespace SaleSystem.Events
             objectToConverted.transform.position = Camera.main.WorldToScreenPoint(objectToConverted.transform.position);
             objectToConverted.transform.DOScale(1.7f, .5f);
             objectToConverted.transform.DOMove(moneyBarPosition.position, 1f).OnComplete(() => objectPooler.ReleaseObject(objectToConverted));
+        }
+
+        public void PrintTheEarningText()
+        {
+            moneyTextUI.text = GameController.Instance.gameTotalEarningsValue.ToString();
+           
         }
     }
 }
