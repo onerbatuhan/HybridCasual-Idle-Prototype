@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AudioSystem.Manager;
+using DataSaveSystem.Manager;
 using GameSystem.Manager;
 using GemSystem.Manager;
 using StackingSystem.Events;
@@ -52,6 +53,7 @@ namespace SaleSystem.Events
       private void CalculateEarnings(GameObject currentSaleObject)
       {
          GemController gemController = currentSaleObject.GetComponent<GemController>();
+         DataController.Instance.DataSave(DataController.Instance.DataLoad("money")+gemController.finalSaleValue, "money");
          GameController.Instance.gameTotalEarningsValue += gemController.finalSaleValue;
          
       }

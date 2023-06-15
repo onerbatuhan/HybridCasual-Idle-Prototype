@@ -6,7 +6,16 @@ namespace DataSaveSystem.Manager
 {
     public class DataController : Singleton<DataController>
     {
-        
+        public void DataSave(int value,string key)
+        {
+            PlayerPrefs.SetInt(key, value);
+            PlayerPrefs.Save();
+        }
+
+        public int DataLoad( string key)
+        {
+           return PlayerPrefs.GetInt(key);
+        }
         public void DataSave(Dictionary<string,int> gemCounts,string gemCountKeyPrefix)
         {
             List<string> keys = new List<string>();
@@ -25,7 +34,6 @@ namespace DataSaveSystem.Manager
         public void DataLoad(Dictionary<string,int> gemCounts,string gemCountKeyPrefix)
         {
             gemCounts.Clear();
-
             foreach (var key in PlayerPrefs.GetString("GemCountsKeys", "").Split(','))
             {
                 if (!string.IsNullOrEmpty(key) && PlayerPrefs.HasKey(key))
