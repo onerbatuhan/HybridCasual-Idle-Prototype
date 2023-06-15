@@ -13,15 +13,18 @@ namespace StackingSystem.Events
 
         public void VerticalStackEvent(GameObject currentGemObject)
         {
-            // currentGemObject.transform.DOKill();
-            // currentGemObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            // currentGemObject.transform.SetParent(stackStartPosition);
-            // currentGemObject.transform.position = stackStartPosition.position;
-            //
-            // Vector3 newPosition = stackStartPosition.position + new Vector3(0f, gemStack.Count * stackHeightOffset, 0f);
-            // currentGemObject.transform.position = newPosition;
-            //
-            // gemStack.Add(currentGemObject);
+            currentGemObject.transform.DOKill();
+            currentGemObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            currentGemObject.transform.SetParent(stackStartPosition);
+            currentGemObject.transform.position = stackStartPosition.position;
+
+            currentGemObject.transform.DOLocalJump(new Vector3(0, gemStack.Count * 1, -1), 1,1,.6f).OnComplete((() =>
+            {
+                currentGemObject.transform.DOLocalMove(new Vector3(0, gemStack.Count * .5f, 0), .3f);
+                gemStack.Add(currentGemObject);
+            }));
+            
+            
         }
 
         

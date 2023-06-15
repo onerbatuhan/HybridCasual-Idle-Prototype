@@ -45,7 +45,7 @@ namespace GemSystem.Manager
             StackController stackController = other.GetComponent<StackController>();
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            // gameObject.SetActive(false);
+            transform.localScale = Vector3.one / 2;
             gemSpawnerEvent.CreateGem(gemOriginalTransform,transform.parent);
             stackController.TriggerStackedEvents(gemData,transform);
             
