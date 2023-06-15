@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemName: Green
   startingSalesPrice: 100
-  gemIcon: {fileID: 0}
+  gemIcon: {fileID: 21300000, guid: 8433fd88767d48a47a2fb5ad92ad8b19, type: 3}
   gemObject: {fileID: 2876237151633499125, guid: 50e1f15dd7f27dd44a7b8d375d2b1abe, type: 3}

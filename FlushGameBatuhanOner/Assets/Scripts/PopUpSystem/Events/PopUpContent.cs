@@ -10,12 +10,11 @@ namespace PopUpSystem.Events
         public TextMeshProUGUI collectedObjectTotalCountText;
         public Image objectImageUI;
 
-        public void ObjectValuePrint(string currentObjectName,int collectedObjectTotalCount,Image objectImage)
+        public void ObjectValuePrint(string currentObjectName,int collectedObjectTotalCount,Sprite objectImage)
         {
-            Debug.Log("ff");
             objectNameText.text = currentObjectName;
             collectedObjectTotalCountText.text = collectedObjectTotalCount.ToString();
-            objectImageUI = objectImage;
+            objectImageUI.sprite = objectImage;
         }
     }
 }

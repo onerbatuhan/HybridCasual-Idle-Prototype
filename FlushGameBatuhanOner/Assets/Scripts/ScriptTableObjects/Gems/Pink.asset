@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemName: Pink
   startingSalesPrice: 100
-  gemIcon: {fileID: 0}
+  gemIcon: {fileID: 21300000, guid: c7eb2f8620635b646a8c131b1f44dce7, type: 3}
   gemObject: {fileID: 9150021139023023609, guid: 9412f7ddda448034292e671381d2452c, type: 3}
