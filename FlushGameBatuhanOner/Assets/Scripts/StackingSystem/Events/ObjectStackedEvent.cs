@@ -17,7 +17,7 @@ namespace StackingSystem.Events
         public ObjectPooler objectPooler;
         private void Start()
         {
-            DataController.Instance.DataLoad(_gemCounts,GameController.EarningKey);
+            DataController.Instance.DataLoad(_gemCounts,GameController.GemCountKeyPrefix);
         }
 
         public void PerformStackedEvent(GemData stackedGemObjectData,Transform stackedGemObjectTransform)
@@ -40,7 +40,7 @@ namespace StackingSystem.Events
             {
                 Debug.Log("Toplanan " + kvp.Key + " Taş Sayısı: " + kvp.Value);
             }
-            DataController.Instance.DataSave(_gemCounts,GameController.EarningKey);
+            DataController.Instance.DataSave(_gemCounts,GameController.GemCountKeyPrefix);
         }
         
         private void TriggerParticleEffect(Transform currentGemTransform)
