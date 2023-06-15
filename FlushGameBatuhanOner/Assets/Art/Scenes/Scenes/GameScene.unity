@@ -1105,6 +1105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroy: 1
   gameTotalEarningsValue: 0
+  moneyTextUI: {fileID: 1732391115}
 --- !u!1001 &157732348
 PrefabInstance:
   m_ObjectHideFlags: 0

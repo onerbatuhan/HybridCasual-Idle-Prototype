@@ -16,31 +16,31 @@ namespace DataSaveSystem.Manager
         {
            return PlayerPrefs.GetInt(key);
         }
-        public void DataSave(Dictionary<string,int> gemCounts,string gemCountKeyPrefix)
+        public void DataSave(Dictionary<string,int> objectCounts,string objectCountKeyPrefix)
         {
             List<string> keys = new List<string>();
-            foreach (var kvp in gemCounts)
+            foreach (var kvp in objectCounts)
             {
-                string key = gemCountKeyPrefix + kvp.Key;
+                string key = objectCountKeyPrefix + kvp.Key;
                 int value = kvp.Value;
                 PlayerPrefs.SetInt(key, value);
                 keys.Add(key);
             }
 
-            PlayerPrefs.SetString("GemCountsKeys", string.Join(",", keys.ToArray()));
+            PlayerPrefs.SetString("objectCountsKeys", string.Join(",", keys.ToArray()));
             PlayerPrefs.Save();
         }
 
-        public void DataLoad(Dictionary<string,int> gemCounts,string gemCountKeyPrefix)
+        public void DataLoad(Dictionary<string,int> objectCounts,string objectCountKeyPrefix)
         {
-            gemCounts.Clear();
-            foreach (var key in PlayerPrefs.GetString("GemCountsKeys", "").Split(','))
+            objectCounts.Clear();
+            foreach (var key in PlayerPrefs.GetString("objectCountsKeys", "").Split(','))
             {
                 if (!string.IsNullOrEmpty(key) && PlayerPrefs.HasKey(key))
                 {
-                    string gemName = key.Substring(gemCountKeyPrefix.Length);
+                    string gemName = key.Substring(objectCountKeyPrefix.Length);
                     int gemCount = PlayerPrefs.GetInt(key);
-                    gemCounts.Add(gemName, gemCount);
+                    objectCounts.Add(gemName, gemCount);
                 }
             }
         }
