@@ -44,7 +44,6 @@ namespace GemSystem.Manager
             if (!other.gameObject.CompareTag("Player")) return;
 
             finalSaleValue = (int) (transform.localScale.x *100 + gemData.startingSalesPrice);
-            Debug.Log(finalSaleValue);
             StackController stackController = other.GetComponent<StackController>();
             GemDataAccessController.Instance.gemObjectList.Remove(gameObject);
             gameObject.GetComponent<CapsuleCollider>().enabled = false;

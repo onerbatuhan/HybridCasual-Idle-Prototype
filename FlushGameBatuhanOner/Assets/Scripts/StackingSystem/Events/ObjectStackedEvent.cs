@@ -36,10 +36,7 @@ namespace StackingSystem.Events
             {
                 _gemCounts.Add(gemName, 1);
             }
-            foreach (var (key, value) in _gemCounts)
-            {
-                Debug.Log("Toplanan " + key + " Taş Sayısı: " + value);
-            }
+           
             DataController.Instance.DataSave(_gemCounts,GameController.GemCountKeyPrefix);
         }
         
