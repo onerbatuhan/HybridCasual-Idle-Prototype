@@ -55,6 +55,10 @@ namespace StackingSystem.Events
            StartCoroutine("ParticleEffectPoolEnqueue",particleEffectObject);
            
         }
+        private void PlaySoundEffect()
+        {
+            AudioController.Instance.gemStackedSound.Play();
+        }
 
         private IEnumerator ParticleEffectPoolEnqueue(GameObject particleEffectObject)
         {
@@ -62,13 +66,6 @@ namespace StackingSystem.Events
             yield return new WaitForSeconds(particleSystem.main.duration);
             objectPooler.ReleaseObject(particleEffectObject);
         }
-
-        private void PlaySoundEffect()
-        {
-            AudioController.Instance.gemStackedSound.Play();
-        }
-
-       
         
     }
 }

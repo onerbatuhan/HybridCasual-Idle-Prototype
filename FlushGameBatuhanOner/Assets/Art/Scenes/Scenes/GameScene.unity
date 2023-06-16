@@ -1306,6 +1306,11 @@ MonoBehaviour:
   yAxisRiseSpeed: 0.8
   rotationSpeed: 3
   rotationAngles: {x: 0, y: 360, z: 0}
+  stackedObjectJumpDistanceYAxis: 1
+  stackedObjectJumpDistanceZAxis: -1
+  stackedObjectJumpTime: 0.6
+  stackedObjectMoveDistanceYAxis: 0.5
+  stackedObjectMoveTime: 0.3
 --- !u!1001 &157732348
 PrefabInstance:
   m_ObjectHideFlags: 0
