@@ -9,11 +9,11 @@ namespace PopUpSystem.Events
         public float largeScaleY = 1.5f;
         public float animationDuration = 0.5f;
 
-        private RectTransform rectTransform;
+        public RectTransform rectTransform;
 
         private void Start()
         {
-            rectTransform = GetComponent<RectTransform>();
+            
             StartScaleAnimation();
         }
 

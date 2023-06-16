@@ -20,7 +20,7 @@ namespace DesignPatterns
                 GameObject newObj = Instantiate(prefab, transform);
                 newObj.SetActive(false);
                 pool.Enqueue(newObj);
-                newObj.transform.parent = parentObject;
+                newObj.transform.SetParent(parentObject);
             }
         }
 
@@ -32,11 +32,10 @@ namespace DesignPatterns
                 obj.SetActive(true);
                 return obj;
             }
-
-            // Pool'da kullanılabilir bir obje yoksa yeni bir obje oluştur
+            
             GameObject newObj = Instantiate(prefab, transform);
             newObj.SetActive(true);
-            newObj.transform.parent = parentObject;
+            newObj.transform.SetParent(parentObject);
             return newObj;
         }
 
