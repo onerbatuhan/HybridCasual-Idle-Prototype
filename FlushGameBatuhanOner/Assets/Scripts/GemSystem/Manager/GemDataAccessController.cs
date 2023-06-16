@@ -14,6 +14,7 @@ namespace GemSystem.Manager
         protected override void Awake()
         {
             gemDataList.RemoveAll(item => item == null);
+            gemObjectList.RemoveAll(item => item == null);
         }
     }
 }
