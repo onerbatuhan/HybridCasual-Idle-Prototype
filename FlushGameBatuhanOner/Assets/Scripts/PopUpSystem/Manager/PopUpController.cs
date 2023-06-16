@@ -12,10 +12,15 @@ namespace PopUpSystem.Manager
     {
         private Dictionary<string, int> _gemCounts = new Dictionary<string, int>();
         private bool isClicked = false;
-
+        public GameObject popUpObject;
         public GameObject popUpContentObject;
         public Transform popUpParentReference;
         public List<PopUpContent> popUpContentsObjectList;
+        private UIScaleEffects uIScaleEffects;
+        private void Start()
+        {
+            uIScaleEffects = FindObjectOfType<UIScaleEffects>();
+        }
 
         public void PopUpButtonClicked()
         {
@@ -47,8 +52,16 @@ namespace PopUpSystem.Manager
             {
                 PopUpContentsUpdate();
             }
+            
+            popUpObject.SetActive(true);
+            uIScaleEffects.OnEnableAnimation(popUpObject.transform);
         }
 
+        public void PopUpButtonBackClicked()
+        {
+            
+            popUpObject.SetActive(false);
+        }
         private void PopUpContentsUpdate()
         {
             DataController.Instance.DataLoad(_gemCounts, GameController.GemCountKeyPrefix);
