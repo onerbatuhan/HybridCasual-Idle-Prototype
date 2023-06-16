@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AudioSystem.Manager;
 using DataSaveSystem.Manager;
 using GameSystem.Manager;
 using GemSystem.Manager;
@@ -54,12 +55,13 @@ namespace PopUpSystem.Manager
             }
             
             popUpObject.SetActive(true);
+            AudioController.Instance.popUpClicked.Play();
             uIScaleEffects.OnEnableAnimation(popUpObject.transform);
         }
 
         public void PopUpButtonBackClicked()
         {
-            
+            AudioController.Instance.popUpBackClicked.Play();
             popUpObject.SetActive(false);
         }
         private void PopUpContentsUpdate()

@@ -13,7 +13,7 @@ namespace AnimationSystem.Manager
 
         public void ChangeAnimation(AnimationType.AnimationTypes animationTypes,Animator currentAnimator)
         {
-            OtherAnimationsOff(currentAnimator);
+            StopAllAnimations(currentAnimator);
             switch (animationTypes)
             {
                 case AnimationType.AnimationTypes.Dance:
@@ -33,7 +33,7 @@ namespace AnimationSystem.Manager
             }
         }
         
-        private static void OtherAnimationsOff(Animator currentAnimator)
+        private static void StopAllAnimations(Animator currentAnimator)
         {
             foreach (AnimationType.AnimationTypes animationType in Enum.GetValues(typeof(AnimationType.AnimationTypes)))
             {
