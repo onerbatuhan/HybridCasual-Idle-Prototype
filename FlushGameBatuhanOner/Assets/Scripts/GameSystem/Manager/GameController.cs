@@ -8,7 +8,7 @@ namespace GameSystem.Manager
     public class GameController : Singleton<GameController>
     {
         public int gameTotalEarningsValue;
-        public TextMeshProUGUI moneyTextUI;  //UISystem>Events>UIElementsDataEvent'e al.
+        public TextMeshProUGUI moneyTextUI;  //UISystem>Events>UIElementsDataEvent
         public const string EarningKey = "money";  
         public const string GemCountKeyPrefix = "GemCount_";
         public const string ObjectCountsKey = "objectCountsKeys";

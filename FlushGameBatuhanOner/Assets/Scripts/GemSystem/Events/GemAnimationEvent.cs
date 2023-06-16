@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GameSystem.Manager;
 using GemSystem.Manager;
 using UnityEngine;
 
@@ -15,9 +16,9 @@ namespace GemSystem.Events
         {
             GemController gemController = gemTransform.GetComponent<GemController>();
             gemTransform.localScale = Vector3.zero;
-            gemTransform.DOScale(Vector3.one, 5).OnUpdate(() =>
+            gemTransform.DOScale(Vector3.one, GameSettings.Instance.scaleGrowthTime).OnUpdate(() =>
             {
-                if (!(gemTransform.localScale.x > .45f)) return;
+                if (!(gemTransform.localScale.x > GameSettings.Instance.collectibleScaleLimit)) return;
                 gemController.canCollected = true;
 
             }).OnComplete(() =>
@@ -29,8 +30,8 @@ namespace GemSystem.Events
 
         private void ObjectAnimationEffectExecute(Transform gemTransform)
         {
-            gemTransform.DOMoveY(gemTransform.position.y+.5f ,1f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
-            gemTransform.DORotate(new Vector3(0f, 360f, 0f), 3f, RotateMode.FastBeyond360)
+            gemTransform.DOMoveY(gemTransform.position.y+GameSettings.Instance.yAxisAddValue ,GameSettings.Instance.yAxisRiseSpeed).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
+            gemTransform.DORotate(GameSettings.Instance.rotationAngles, GameSettings.Instance.rotationSpeed, RotateMode.FastBeyond360)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
         }
