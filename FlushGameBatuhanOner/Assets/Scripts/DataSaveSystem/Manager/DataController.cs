@@ -7,6 +7,7 @@ namespace DataSaveSystem.Manager
 {
     public class DataController : Singleton<DataController>
     {
+        //General use
         public void DataSave(int value,string key)
         {
             PlayerPrefs.SetInt(key, value);
@@ -17,6 +18,7 @@ namespace DataSaveSystem.Manager
         {
            return PlayerPrefs.GetInt(key);
         }
+        //private use
         public void DataSave(Dictionary<string,int> objectCounts,string objectCountKeyPrefix)
         {
             List<string> keys = new List<string>();
@@ -31,7 +33,6 @@ namespace DataSaveSystem.Manager
             PlayerPrefs.SetString(GameController.ObjectCountsKey, string.Join(",", keys.ToArray()));
             PlayerPrefs.Save();
         }
-
         public void DataLoad(Dictionary<string,int> objectCounts,string objectCountKeyPrefix)
         {
             objectCounts.Clear();

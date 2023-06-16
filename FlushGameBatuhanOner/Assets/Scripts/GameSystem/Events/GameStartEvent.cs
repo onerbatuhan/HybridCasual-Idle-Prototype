@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using AnimationSystem.Manager;
 using Cinemachine;
 using PlayerSystem.Manager;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace GameSystem.Events

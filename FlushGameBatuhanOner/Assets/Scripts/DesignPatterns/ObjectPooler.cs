@@ -8,7 +8,6 @@ namespace DesignPatterns
         public GameObject prefab;
         public int poolSize;
         public Transform parentObject;
-
         private Queue<GameObject> pool;
 
         private void Start()
